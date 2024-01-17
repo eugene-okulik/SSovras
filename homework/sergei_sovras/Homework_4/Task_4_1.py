@@ -18,7 +18,7 @@ my_dict_final['list'].pop(1)
 
 # Для того, что хранится под ключом ‘dict’:
 # добавьте элемент с ключом ('i am a tuple',) и любым значением
-my_dict_final['dict']['i am a tuple'] = 'New element for the dict'
+my_dict_final['dict']["('i am a tuple',)"] = 'New element for the dict'
 # удалите какой-нибудь элемент
 my_dict_final['dict'].pop('third')
 
