@@ -6,7 +6,7 @@ PRICE_LIST = '''тетрадь 50р
 пенал 300р
 рюкзак 500р'''
 
-new_list = PRICE_LIST.splitlines(keepends=False)
+new_list = PRICE_LIST.split('\n')
 item = []
 cost = []
 for i in range(len(new_list)):

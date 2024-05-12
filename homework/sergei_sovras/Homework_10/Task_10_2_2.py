@@ -9,7 +9,7 @@ def outher_decorator(count):
     return repeat_me
 
 
-@outher_decorator(count = 2)
+@outher_decorator(count=2)
 def example(text):
     print(text)
 
