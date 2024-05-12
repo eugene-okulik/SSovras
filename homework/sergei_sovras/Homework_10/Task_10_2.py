@@ -12,4 +12,4 @@ def example(text):
     print(text)
 
 
-example('print me', count=2)
+example('print me', count=3)
