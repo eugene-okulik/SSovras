@@ -14,15 +14,15 @@ def action_rule(func):
 
 
 @action_rule
-def calc(a, b, operation):
+def calc(c, d, operation):
     if operation == '+':
-        return a + b
+        return c + d
     elif operation == '-':
-        return a - b
+        return c - d
     elif operation == '/':
-        return a / b
+        return c / d
     elif operation == '*':
-        return a * b
+        return c * d
 
 
 a, b = int(input()), int(input())

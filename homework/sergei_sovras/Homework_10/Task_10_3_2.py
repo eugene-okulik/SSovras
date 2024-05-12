@@ -1,6 +1,5 @@
 def action_rule(func):
     def wrapper(x, y):
-        operator = ''
         if x == y:
             print(func(x, y, '+'))
         if x > y:
@@ -24,5 +23,5 @@ def calc(a, b, operation):
         return a * b
 
 
-a, b = int(input()), int(input())
-calc(a, b)
+c, d = int(input()), int(input())
+calc(c, d)
