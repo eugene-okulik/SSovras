@@ -1,37 +1,31 @@
 class Flowers:
-    def __init__(self, name, color):
+    def __init__(self, name, color, life_time, price, area):
         self.name = name
         self.color = color
+        self.life_time = life_time
+        self.price = price
+        self.area = area
 
 
 class Rose(Flowers):
     kind = 'Rose'
 
     def __init__(self, name, color, life_time, price, area):
-        super().__init__(name, color)
-        self.life_time = life_time
-        self.price = price
-        self.area = area
+        super().__init__(name, color, life_time, price, area)
 
 
 class Gvozdika(Flowers):
     kind = 'Gvozdika'
 
     def __init__(self, name, color, life_time, price, area):
-        super().__init__(name, color)
-        self.life_time = life_time
-        self.price = price
-        self.area = area
+        super().__init__(name, color, life_time, price, area)
 
 
 class Pion(Flowers):
     kind = 'Pion'
 
     def __init__(self, name, color, life_time, price, area):
-        super().__init__(name, color)
-        self.life_time = life_time
-        self.price = price
-        self.area = area
+        super().__init__(name, color, life_time, price, area)
 
 
 class Bouquet:
