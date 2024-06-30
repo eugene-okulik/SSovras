@@ -1,0 +1,44 @@
+#1
+INSERT INTO students (name, second_name) VALUES ('Arnold', 'Arni_Tester')
+
+#2
+INSERT INTO books (title) VALUES ('The first book for Arni')
+INSERT INTO books (title) VALUES ('The secons book for Arni')
+UPDATE books SET taken_by_student_id = 1400 WHERE title = 'The first book for Arni' or title = 'The secons book for Arni'
+
+#3
+UPDATE students SET group_id = 1398 WHERE id = 1400
+
+#4
+INSERT INTO subjets (title) VALUES ('Math_for_Arni')
+INSERT INTO subjets (title) VALUES ('Geo_for_Arni')
+
+#5
+INSERT INTO lessons (title, subject_id) VALUES ('Lesson_1 for Math_for_Arni', 1863)
+INSERT INTO lessons (title, subject_id) VALUES ('Lesson_2 for Math_for_Arni', 1863)
+INSERT INTO lessons (title, subject_id) VALUES ('Lesson_1 for Geo_for_Arni', 1864)
+INSERT INTO lessons (title, subject_id) VALUES ('Lesson_2 for Geo_for_Arni', 1864)
+
+#6
+INSERT INTO marks (value, lesson_id, student_id) VALUES (5, 4234, 1400)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (9, 4235, 1400)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (1, 4236, 1400)
+INSERT INTO marks (value, lesson_id, student_id) VALUES (7, 4237, 1400)
+
+#7
+SELECT m.value FROM marks m WHERE student_id = 1400
+
+#8
+SELECT b.title FROM books b WHERE b.taken_by_student_id = 1400
+
+#9
+SELECT s.id Student_id, s.name First_name, s.second_name Second_name, g.title Grpoup_title, g.start_date Start_date,
+g.end_date End_date, b.title Book_title, mls.Mark Mark_value, mls.Lesson_id Lesson_id, mls.Subject_title Subject_title
+FROM students s
+JOIN `groups` g ON s.group_id = g.id
+JOIN books b ON s.id = b.taken_by_student_id
+JOIN (SELECT j1.Stud_id, j1.markid Mark_id, j1.Mark, j1.t1 Lesson_id, j2.stil Subject_title FROM (SELECT m.id markid,
+m.value Mark, m.student_id Stud_id, l.id lid, l.title t1 FROM marks m JOIN lessons l ON m.lesson_id = l.id) j1
+JOIN (SELECT l.id lid2, l.title t2, s.title stil FROM lessons l JOIN subjets s ON l.subject_id = s.id) j2
+ON j1.lid = j2.lid2) mls ON s.id = mls.Stud_id
+WHERE s.id = 1400
