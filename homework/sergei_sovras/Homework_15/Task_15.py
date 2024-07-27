@@ -1,12 +1,6 @@
 import mysql.connector as mysql
 
-db = mysql.connect(
-    host='db-mysql-fra1-09136-do-user-7651996-0.b.db.ondigitalocean.com',
-    port=25060,
-    user='st-onl',
-    passwd='AVNS_tegPDkI5BlB2lW5eASC',
-    database='st-onl'
-)
+db = mysql.connect()
 cursor = db.cursor(dictionary=True)
 
 # 1 INSERT INTO students (name, second_name) VALUES ('Arnold', 'Arni_Tester')
