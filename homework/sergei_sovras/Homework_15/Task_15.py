@@ -1,6 +1,8 @@
 import mysql.connector as mysql
 
-db = mysql.connect()
+db = mysql.connect(
+    #secrets
+)
 
 cursor = db.cursor(dictionary=True)
 
