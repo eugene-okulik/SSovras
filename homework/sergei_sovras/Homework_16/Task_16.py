@@ -18,8 +18,7 @@ cursor = db.cursor()
 cursor.execute('SELECT * FROM students')
 data = cursor.fetchall()
 
-query_9 = f'''
-SELECT s.name First_name, s.second_name Second_name, g.title Grpoup_title, b.title Book_title,
+query_9 = '''SELECT s.name First_name, s.second_name Second_name, g.title Grpoup_title, b.title Book_title,
 mls.Subject_title Subject_title, mls.Lesson_id Lesson_id,
 mls.Mark Mark_value
 FROM students s
