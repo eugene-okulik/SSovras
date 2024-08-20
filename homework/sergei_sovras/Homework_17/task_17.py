@@ -11,7 +11,7 @@ args = parser.parse_args()
 folder_path = args.fp
 word = args.sw
 full = args.full
-word = word.lower()
+search_word = word.lower()
 file_name = ''
 flag = False
 
@@ -22,18 +22,18 @@ for file in files:
     with open(file_path, 'r') as log_file:
 
         for line in log_file:
+            line = line.lower()
             splited_line = line.split()
-
-            if word in splited_line:
+            if search_word in splited_line:
                 flag = True
 
                 if full == 'Yes':
-                    print(f'The file {os.path.basename(file_path)} contains {line} ')
+                    print(f'The file {os.path.basename(file_path)} contains: {line} ')
 
                 else:
-                    place = splited_line.index(word)
+                    place = splited_line.index(search_word)
                     substring = ' '.join(splited_line[place - 5: place + 6])
-                    print(f'The file {os.path.basename(file_path)} contains subline {substring} ')
+                    print(f'The file {os.path.basename(file_path)} contains subline: {substring} ')
 
 if not flag:
     print(f'There is no includes the word {word}')
