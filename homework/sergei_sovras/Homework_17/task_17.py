@@ -36,7 +36,6 @@ for file in files:
                         substring = ' '.join(splited_line[: place + 6])
                     else:
                         substring = ' '.join(splited_line[place - 5: place + 6])
-                    print(place)
                     print(f'The file {os.path.basename(file_path)} contains subline: {substring} ')
 
 if not flag:
