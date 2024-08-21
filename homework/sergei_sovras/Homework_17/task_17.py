@@ -32,7 +32,11 @@ for file in files:
 
                 else:
                     place = splited_line.index(search_word)
-                    substring = ' '.join(splited_line[place - 5: place + 6])
+                    if place < 5:
+                        substring = ' '.join(splited_line[: place + 6])
+                    else:
+                        substring = ' '.join(splited_line[place - 5: place + 6])
+                    print(place)
                     print(f'The file {os.path.basename(file_path)} contains subline: {substring} ')
 
 if not flag:
