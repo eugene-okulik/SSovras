@@ -49,4 +49,3 @@ def messages_for_each_test():
     print('\nBefore test')
     yield
     print('\nAfter test')
-
