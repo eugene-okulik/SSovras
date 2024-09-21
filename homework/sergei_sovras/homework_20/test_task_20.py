@@ -2,6 +2,7 @@ import pytest
 import requests
 import allure
 
+
 @allure.feature('Creating')
 @allure.story('Create an object')
 @allure.title('Verifying creating a new record')
@@ -70,6 +71,7 @@ def test_patch_editing(obj_creating_and_deleting, messages_for_each_session, mes
         assert response.status_code == 200, "The request isn't sent"
     with allure.step('Verifying the id value'):
         assert response.json()['id'] == obj_id
+
 
 @allure.feature('Deleting')
 @allure.story('Delete the object')
