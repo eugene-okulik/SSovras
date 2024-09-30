@@ -16,5 +16,5 @@ class DeleteObj(Endpoint):
         )
         self.json = self.response.json()['message']
         self.status_response = self.response.status_code
-        print( self.json)
+        print(self.json)
         return self.response

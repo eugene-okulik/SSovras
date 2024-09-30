@@ -39,7 +39,6 @@ def new_object(create_obj_endpoint):
     }
     create_obj_endpoint.create_new_object(payload=data)
     object_id = create_obj_endpoint.obj_id
-    #print(f'Object with id: {object_id} was created', )
     yield object_id
 
 
