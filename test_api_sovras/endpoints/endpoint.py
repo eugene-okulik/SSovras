@@ -11,7 +11,7 @@ class Endpoint:
 
     @allure.step('Check that response is 200')
     def verifying_status_code_200(self):
-        assert self.response.status_code == 200
+        assert self.status_response == 200
 
     @allure.step('Check that name is the same as sent')
     def verifying_response_title_is_correct(self, name):

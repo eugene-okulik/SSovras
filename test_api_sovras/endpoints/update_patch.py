@@ -16,4 +16,5 @@ class UpdatePatch(Endpoint):
             headers=headers
         )
         self.json = self.response.json()
+        self.status_response = self.response.status_code
         return self.response

@@ -18,4 +18,15 @@ class CreateObj(Endpoint):
         self.json = self.response.json()
         self.status_response = self.response.status_code
         self.obj_id = self.json["id"]
+        print(f'Object with id: {self.obj_id} was created')
+        return self.response
+
+    def delete_created_object(self, headers=None):
+        headers = headers if headers else self.headers
+        self.response = requests.delete(
+            f'{self.url}/{self.obj_id}',
+            headers=headers
+        )
+        self.status_response = self.response.status_code
+        print(f'Object with id: {self.obj_id} was deleted')
         return self.response

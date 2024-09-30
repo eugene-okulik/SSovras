@@ -3,7 +3,7 @@ import pytest
 
 @pytest.mark.critical
 @pytest.mark.parametrize('name_param', ['Name_1', 'Name_2', 'Name_3'])
-def test_create_object(name_param, create_obj_endpoint, delete_object):
+def test_create_object(name_param, create_obj_endpoint):
     data = {
         "name": name_param,
         "data": {
@@ -16,6 +16,7 @@ def test_create_object(name_param, create_obj_endpoint, delete_object):
     create_obj_endpoint.create_new_object(payload=data)
     create_obj_endpoint.verifying_status_code_200()
     create_obj_endpoint.verifying_response_title_is_correct(data['name'])
+    create_obj_endpoint.delete_created_object()
 
 
 @pytest.mark.low

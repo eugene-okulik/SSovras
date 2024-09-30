@@ -38,10 +38,13 @@ def new_object(create_obj_endpoint):
         }
     }
     create_obj_endpoint.create_new_object(payload=data)
-    yield create_obj_endpoint.obj_id
+    object_id = create_obj_endpoint.obj_id
+    #print(f'Object with id: {object_id} was created', )
+    yield object_id
 
 
 @pytest.fixture()
-def delete_object(delete_obj_endpoint):
+def delete_object(delete_obj_endpoint, new_object):
     yield True
     delete_obj_endpoint.delete_object(new_object)
+    print(f'Object with id: {new_object} was deleted')
