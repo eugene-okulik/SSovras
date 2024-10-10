@@ -1,13 +1,4 @@
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-import pytest
-
-
-@pytest.fixture()
-def driver():
-    chrome_driver = webdriver.Chrome()
-    chrome_driver.maximize_window()
-    yield chrome_driver
 
 
 def test_visit_and_fill_text(driver):
