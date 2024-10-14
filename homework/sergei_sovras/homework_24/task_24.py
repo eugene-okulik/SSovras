@@ -32,3 +32,22 @@ def test_add_to_cart(driver):
     wait.until(ec.element_to_be_clickable((By.CLASS_NAME, 'success')))
     cart_item = driver.find_elements(By.TAG_NAME, 'td')
     assert cart_item[1].text == item_text, 'Check your code, there is an error'
+
+
+def test_add_to_compare(driver):
+    url = 'https://magento.softwaretestingboard.com/gear/bags.html'
+    driver.get(url)
+    item = driver.find_element(By.CLASS_NAME, 'product-item-link')
+    compare_button = driver.find_element(By.CSS_SELECTOR, '[title="Add to Compare"]')
+    driver.execute_script("arguments[0].scrollIntoView(true);", item)
+
+    actions = ActionChains(driver)
+    actions.move_to_element(item)
+    actions.click(compare_button)
+    actions.perform()
+
+    compare_section = driver.find_element(By.TAG_NAME, 'h1')
+    driver.execute_script("arguments[0].scrollIntoView(true);", compare_section)
+    item_text = driver.find_element(By.CLASS_NAME, 'product-item-link')
+    item_comparing = driver.find_element(By.CSS_SELECTOR, '.odd > .product-item-name > a')
+    assert item_comparing.text == item_text.text, 'Check your code, there is an error'
