@@ -10,7 +10,7 @@ def test_mock_data(page: Page):
         body = response.json()
         body['body']['digitalMat'][0]['familyTypes'][0]['productName'] = title_update
         body = json.dumps(body)
-        route.fulfill(response=response,body=body)
+        route.fulfill(response=response, body=body)
 
     page.route('**/digital-mat?path=library/step0_iphone/digitalmat', handle_and_update_rout)
     page.goto('https://www.apple.com/shop/buy-iphone')
