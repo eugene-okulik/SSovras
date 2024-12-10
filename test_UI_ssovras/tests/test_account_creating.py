@@ -3,6 +3,7 @@ import random
 
 login_page_url = 'https://magento.softwaretestingboard.com/customer/account/'
 
+
 def test_title_is_presented(account_creating):
     account_creating.open_page()
     account_creating.verify_header_text('Create New Customer Account')

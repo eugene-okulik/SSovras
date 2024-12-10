@@ -1,7 +1,7 @@
 
 title_locator = 'h1'
 
-first_name_locator ='#firstname'
+first_name_locator = '#firstname'
 last_name_locator = '#lastname'
 email_locator = '#email_address'
 password_locator = '#password'

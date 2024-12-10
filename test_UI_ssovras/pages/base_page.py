@@ -1,5 +1,5 @@
 from playwright.sync_api import Page, expect, Locator
-from test_UI_ssovras.pages.locators import *
+from test_UI_ssovras.pages.locators import title_locator
 
 
 class BasePage:

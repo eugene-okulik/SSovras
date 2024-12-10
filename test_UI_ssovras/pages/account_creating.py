@@ -1,7 +1,9 @@
 from playwright.sync_api import expect
 
 from test_UI_ssovras.pages.base_page import BasePage
-from test_UI_ssovras.pages.locators import *
+from test_UI_ssovras.pages.locators import (
+    first_name_locator, last_name_locator, email_locator, password_locator, password_confirmation_locator,
+    submit_button_locator, error_first_name_locator)
 
 
 class AccountCreate(BasePage):

@@ -1,7 +1,7 @@
 from playwright.sync_api import expect
 
 from test_UI_ssovras.pages.base_page import BasePage
-from test_UI_ssovras.pages.locators import *
+from test_UI_ssovras.pages.locators import compare_products, whats_new
 
 
 class Sale(BasePage):
