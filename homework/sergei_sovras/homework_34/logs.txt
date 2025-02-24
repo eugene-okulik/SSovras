@@ -1,0 +1,26 @@
+Started by user admin
+
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/API_test
+[API_test] $ /bin/sh -xe /tmp/jenkins11116602063346589464.sh
++ cd SSovras/homework/sergei_sovras/homework_19
++ git pull
+Already up to date.
++ pip --version
+pip 23.0.1 from /usr/lib/python3/dist-packages/pip (python 3.11)
++ pytest -v
+============================= test session starts ==============================
+platform linux -- Python 3.11.2, pytest-7.2.1, pluggy-1.0.0+repack -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /var/jenkins_home/workspace/API_test/SSovras/homework/sergei_sovras/homework_19, configfile: pytest.ini
+collecting ... collected 6 items
+
+test_task_19.py::test_create_object[Name_1] PASSED                       [ 16%]
+test_task_19.py::test_create_object[Name_2] PASSED                       [ 33%]
+test_task_19.py::test_create_object[Name_3] PASSED                       [ 50%]
+test_task_19.py::test_put_editing PASSED                                 [ 66%]
+test_task_19.py::test_patch_editing PASSED                               [ 83%]
+test_task_19.py::test_delete_object PASSED                               [100%]
+
+============================== 6 passed in 6.85s ===============================
+Finished: SUCCESS
